@@ -9,6 +9,9 @@
 * Migrate the example app off CocoaPods: removed `Podfile`/`Podfile.lock`, the
   CocoaPods build phases and xcconfig includes, and the `Pods.xcodeproj`
   workspace reference.
+* Stop shipping `build/` and `.dart_tool/` in the published archive. Because a
+  `.pubignore` exists, pub ignores `.gitignore` entirely, so those paths are now
+  listed in `.pubignore` explicitly.
 
 ## 0.2.2
 

@@ -1,2 +1,18 @@
+# Because this file exists, pub ignores .gitignore entirely when building the
+# published archive. Every path that should stay out of the package has to be
+# listed here, including anything already covered by .gitignore.
+
 # Exclude old iOS class files that are tracked in git but no longer used
 ios/Classes/
+
+# Build output and tool caches (mirrors .gitignore)
+.dart_tool/
+.packages
+.pub/
+build/
+.build/
+.swiftpm/
+.DS_Store
+**/*.settings
+**/*.project
+**/*.classpath
