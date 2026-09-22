@@ -10,7 +10,7 @@ Add `flutter_system_proxy` to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_system_proxy: ^0.2.0
+  flutter_system_proxy: ^0.3.0
 ```
 
 Then run:
@@ -24,6 +24,32 @@ Alternatively, install from the command line:
 ```sh
 flutter pub add flutter_system_proxy
 ```
+
+### iOS requirements
+
+On iOS this plugin ships as a Swift Package only — it no longer provides a
+podspec. Your app must therefore use Swift Package Manager for its iOS
+dependencies:
+
+- Flutter 3.44.0 or newer.
+- Swift Package Manager enabled: `flutter config --enable-swift-package-manager`
+  (on by default since Flutter 3.44).
+
+If your app's `ios/` directory still has a `Podfile`, migrate it first:
+
+```sh
+cd ios
+pod deintegrate
+rm Podfile Podfile.lock
+```
+
+Then remove the `#include? ".../Pods-Runner.*.xcconfig"` lines from
+`ios/Flutter/Debug.xcconfig` and `ios/Flutter/Release.xcconfig`, and drop the
+`Pods/Pods.xcodeproj` file reference from `ios/Runner.xcworkspace`. See
+[Flutter's Swift Package Manager docs](https://docs.flutter.dev/packages-and-plugins/swift-package-manager/for-app-developers)
+for details.
+
+If you cannot migrate off CocoaPods yet, pin to `flutter_system_proxy: ^0.2.2`.
 
 ### Basic Usage (Example With Dio)
 

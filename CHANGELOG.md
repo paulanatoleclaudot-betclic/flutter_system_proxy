@@ -1,3 +1,15 @@
+## 0.3.0
+
+* **BREAKING** (iOS): drop CocoaPods support. The plugin is now distributed
+  exclusively as a Swift Package; `ios/flutter_system_proxy.podspec` has been
+  removed. Apps that still integrate iOS dependencies with CocoaPods must
+  migrate to Swift Package Manager, or stay on 0.2.x.
+* Require Flutter >= 3.44.0, the minimum version that provides the
+  `FlutterFramework` Swift package the plugin's `Package.swift` depends on.
+* Migrate the example app off CocoaPods: removed `Podfile`/`Podfile.lock`, the
+  CocoaPods build phases and xcconfig includes, and the `Pods.xcodeproj`
+  workspace reference.
+
 ## 0.2.2
 
 * fix(ios): raise minimum iOS version to 13.0 for SPM FlutterFramework compatibility.
